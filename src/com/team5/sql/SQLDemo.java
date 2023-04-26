@@ -3,7 +3,7 @@ package com.team5.sql;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SQLTest {
+public class SQLDemo {
     public static void main(String[] args) throws SQLException {
         SQL sql=new SQL();
         sql.getConnect();
