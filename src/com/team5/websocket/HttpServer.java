@@ -7,7 +7,7 @@ import java.net.Socket;
 public class HttpServer {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket=new ServerSocket(8080);
-        System.out.println("server is running...");
+        System.out.println("server is start...");
         while (true){
             Socket socket = serverSocket.accept();// 监听
             System.out.println("connected from " + socket.getRemoteSocketAddress());

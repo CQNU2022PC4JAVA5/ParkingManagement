@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/src/websites/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/HttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/HttpServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/HttpServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +75,19 @@
       <workItem from="1682335945657" duration="117000" />
       <workItem from="1682500875112" duration="2758000" />
       <workItem from="1682516817849" duration="89000" />
+      <workItem from="1682595709651" duration="2945000" />
+      <workItem from="1682599807527" duration="1857000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
