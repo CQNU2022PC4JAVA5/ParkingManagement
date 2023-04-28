@@ -1,7 +1,9 @@
 package com.team5.websocket;
 
 public class Request extends Header{
-    private String method;//Allowed method: GET and Post
+    public String method;//Allowed method: GET and Post
+    public String data;
+    public String httpversion;
 
     public String getMethod() {
         return method;

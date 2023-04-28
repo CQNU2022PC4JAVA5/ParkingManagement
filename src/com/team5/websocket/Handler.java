@@ -14,6 +14,7 @@ public class Handler extends Thread{
     public void run() {
         try(InputStream input=this.socket.getInputStream()){
             try(OutputStream output=this.socket.getOutputStream()) {
+                //System.out.println(socket.get);
                 handle(input,output);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -36,12 +37,24 @@ public class Handler extends Thread{
         BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
         // 读取http请求
         Manager manager = new Manager();
+        int i=0;
         for(;;){
+            i++;
             String header=reader.readLine();
             if (header.isEmpty()) {
                 break;
             }
+            if(i==1){
+                String[] tmp=header.split(" ");
+                if(tmp.length>2){
+                    manager.request.method=tmp[0];
+                    manager.request.data=tmp[1];
+                    manager.request.httpversion=tmp[2];
+                }
+            }else{
             manager.request.addHearder(header);
+            //System.out.println(header);
+            }
         }
         String data=manager.getResponse().getData();
         writer.write(data);
