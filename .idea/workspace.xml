@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/sql/MySQLDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/sql/MySQLDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/fee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/fee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/in.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/out.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/out.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/spots.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/websites/spots.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +42,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/extra jar/mysql-connector-java-5.1.39-bin.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Java Projects/extra jar/mysql-connector-java-5.1.39-bin.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.team5.websocket.HttpServer" />
@@ -98,6 +103,7 @@
       <workItem from="1682642242360" duration="206000" />
       <workItem from="1682645817494" duration="229000" />
       <workItem from="1682648526384" duration="1690000" />
+      <workItem from="1682674671813" duration="1539000" />
     </task>
     <servers />
   </component>
