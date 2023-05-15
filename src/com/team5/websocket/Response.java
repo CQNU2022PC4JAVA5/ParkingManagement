@@ -3,7 +3,7 @@ package com.team5.websocket;
 import java.nio.charset.StandardCharsets;
 
 public class Response extends Header{
-    private String data;
+    private String data="";
     public String httpVersion="HTTP/1.1";
     public String httpStatus="200 OK";
     public String contentType="text/html";

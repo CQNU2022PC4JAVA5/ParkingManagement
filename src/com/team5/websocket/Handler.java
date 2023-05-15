@@ -36,6 +36,7 @@ public class Handler extends Thread{
         BufferedReader reader=new BufferedReader(new InputStreamReader(input,StandardCharsets.UTF_8)) ;
         BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
         // 读取http请求
+        System.out.println(this.socket.toString());
         Manager manager = new Manager();
         int i=0;
         for(;;){
@@ -53,7 +54,7 @@ public class Handler extends Thread{
                 }
             }else{
             manager.request.addHearder(header);
-            //System.out.println(header);
+            System.out.println(header);
             }
         }
         String data=manager.getResponse().getData();

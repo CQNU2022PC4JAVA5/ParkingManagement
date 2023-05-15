@@ -2,7 +2,7 @@ package com.team5.sql;
 import java.sql.*;
 public class SQL {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private String DB_URL = "jdbc:mysql://172.30.176.1:3306/test";
+    private String DB_URL = "jdbc:mysql://172.30.176.1:3306/parkingmanagement";
     private String USER = "root";
     private String PASS = "baiyun";
     private Connection conn = null;
