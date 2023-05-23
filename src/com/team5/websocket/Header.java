@@ -10,6 +10,9 @@ public class Header {
     public void addHearder(String hearder){
         this.headers.add(hearder);
     }
+    public void addHearder(String name,String value){
+        this.headers.add(name+": "+value);
+    }
     public void cleanHearders(){
         this.headers.clear();
     }

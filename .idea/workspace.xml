@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/team5/api/login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/team5/other/text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +106,11 @@
       <workItem from="1683707372788" duration="5000" />
       <workItem from="1684050955429" duration="17000" />
       <workItem from="1684118858486" duration="4480000" />
+      <workItem from="1684484686210" duration="762000" />
+      <workItem from="1684842049996" duration="1205000" />
+      <workItem from="1684843307598" duration="923000" />
+      <workItem from="1684844266912" duration="800000" />
+      <workItem from="1684845095021" duration="111000" />
     </task>
     <servers />
   </component>

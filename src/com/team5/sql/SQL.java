@@ -5,8 +5,8 @@ public class SQL {
     private String DB_URL = "jdbc:mysql://172.30.176.1:3306/parkingmanagement";
     private String USER = "root";
     private String PASS = "baiyun";
-    private Connection conn = null;
-    private Statement stmt = null;
+    public Connection conn = null;
+    public Statement stmt = null;
 
     public SQL() {
     }
