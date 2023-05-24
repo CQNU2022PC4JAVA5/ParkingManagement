@@ -50,7 +50,7 @@ public class Manager {
     }
     private void getLogin_success(Response response,String account){
         FileReader reader = new FileReader();
-        response.setData(reader.readFile("src/websites/login_success.html"));
+        response.setData(reader.readFile("src/main/java/websites/login_success.html"));
         Token token = new Token();
         token.tokenkey= token.getNewTokenKey();
         System.out.println(account);
@@ -59,11 +59,11 @@ public class Manager {
     }
     private void getFunctions(Response response){
         FileReader reader = new FileReader();
-        response.setData(reader.readFile("src/websites/functions.html"));
+        response.setData(reader.readFile("src/main/java/websites/functions.html"));
     }
     private void getLogin(Response response){
         FileReader reader = new FileReader();
-        response.setData(reader.readFile("src/websites/login.html"));
+        response.setData(reader.readFile("src/main/java/websites/login.html"));
     }
     private void toLogin(Response response){
         response.httpStatus="302 moved";
