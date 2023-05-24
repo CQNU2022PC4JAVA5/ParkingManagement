@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Header.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Header.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +116,9 @@
       <workItem from="1684843307598" duration="923000" />
       <workItem from="1684844266912" duration="800000" />
       <workItem from="1684845095021" duration="111000" />
+      <workItem from="1684916178025" duration="6567000" />
+      <workItem from="1684926925347" duration="3702000" />
+      <workItem from="1684930700668" duration="1333000" />
     </task>
     <servers />
   </component>
@@ -129,6 +137,14 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />

@@ -15,35 +15,51 @@ public class Manager {
             return this.response;
         }
         System.out.println("request:"+request.data);
-
-        if(request.data.equals("/")){
+        String tokenkey = getRightString(request.getValue("Cookie"),"token=");
+        Token token = new Token(getRightString(request.getValue("Cookie"),"token="));
+        if(request.data.equals("/")) {
             toLogin(response);
         }
-
         if(request.data.equals("/login")) {
-            getLogin(response);
+            if(token.isExpire()){
+                getLogin(response);
+            }else{
+                toFunctions(response);
+            }
         }
         else if(request.data.startsWith("/login?username=")&&request.data.contains("&password=")){
             String account,password;
             account= getSubString(request.data,"username=","&");
             password=getRightString(request.data,"password=");
             if(login(account,password)) {
-                getFunctions(response);
+                getLogin_success(response,account);
             }else{
                 toLogin(response);
             }
         }
-
+        else if(token.isExpire()){
+            toLogin(response);
+        }
+        else if(request.data.equals("/functions")){
+            getFunctions(response);
+        }
         else{
             defReturn(response);
         }
-
         return this.response;
+    }
+    private void getLogin_success(Response response,String account){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/websites/login_success.html"));
+        Token token = new Token();
+        token.tokenkey= token.getNewTokenKey();
+        System.out.println(account);
+        token.init(account);
+        response.addHearder("Set-Cookie: token="+token.tokenkey);
     }
     private void getFunctions(Response response){
         FileReader reader = new FileReader();
         response.setData(reader.readFile("src/websites/functions.html"));
-        response.addHearder("Set-Cookie: test=123456");
     }
     private void getLogin(Response response){
         FileReader reader = new FileReader();
@@ -52,6 +68,11 @@ public class Manager {
     private void toLogin(Response response){
         response.httpStatus="302 moved";
         response.addHearder("Location: \\login");
+        //response.setData("<html><body><h1>Hello, world!</h1></body></html>");
+    }
+    private void toFunctions(Response response){
+        response.httpStatus="302 moved";
+        response.addHearder("Location: \\functions");
         //response.setData("<html><body><h1>Hello, world!</h1></body></html>");
     }
     private void defReturn(Response response){
