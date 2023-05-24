@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Header.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Header.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/api/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/api/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/other/text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/other/text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/sql/MySQLDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/sql/MySQLDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/sql/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/sql/SQLDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/sql/SQLDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/HttpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/team5/websocket/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/fee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/fee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/in.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/login_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/login_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/out.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/out.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websites/spots.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websites/spots.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,27 +54,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/extra jar/mysql-connector-java-5.1.39-bin.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Java Projects/extra jar/mysql-connector-java-5.1.39-bin.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.team5.websocket.HttpServer" />
@@ -119,6 +133,7 @@
       <workItem from="1684916178025" duration="6567000" />
       <workItem from="1684926925347" duration="3702000" />
       <workItem from="1684930700668" duration="1333000" />
+      <workItem from="1684932208103" duration="800000" />
     </task>
     <servers />
   </component>
