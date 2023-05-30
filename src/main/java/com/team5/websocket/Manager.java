@@ -65,6 +65,22 @@ public class Manager {
         FileReader reader = new FileReader();
         response.setData(reader.readFile("src/main/java/websites/login.html"));
     }
+    private void getSpots(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/spots.html"));
+    }
+    private void getFee(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/fee.html"));
+    }
+    private void getIn(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/in.html"));
+    }
+    private void getOut(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/out.html"));
+    }
     private void toLogin(Response response){
         response.httpStatus="302 moved";
         response.addHearder("Location: \\login");
@@ -74,6 +90,22 @@ public class Manager {
         response.httpStatus="302 moved";
         response.addHearder("Location: \\functions");
         //response.setData("<html><body><h1>Hello, world!</h1></body></html>");
+    }
+    private void toSpots(Response response){
+        response.httpStatus="302 moved";
+        response.addHearder("Location: \\spots");
+    }
+    private void toFee(Response response){
+        response.httpStatus="302 moved";
+        response.addHearder("Location: \\fee");
+    }
+    private void toIn(Response response){
+        response.httpStatus="302 moved";
+        response.addHearder("Location: \\in");
+    }
+    private void toOut(Response response){
+        response.httpStatus="302 moved";
+        response.addHearder("Location: \\out");
     }
     private void defReturn(Response response){
         response.setData("<html><body><h1>Hello, world!</h1></body></html>");
