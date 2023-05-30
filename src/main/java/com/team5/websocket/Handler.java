@@ -35,6 +35,8 @@ public class Handler extends Thread{
         // TODO Auto-generated method stub
         BufferedReader reader=new BufferedReader(new InputStreamReader(input,StandardCharsets.UTF_8)) ;
         BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
+
+
         // 读取http请求
         //System.out.println(this.socket.toString());
         Manager manager = new Manager();
