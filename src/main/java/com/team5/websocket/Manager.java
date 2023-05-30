@@ -10,7 +10,7 @@ public class Manager {
     public Response getResponse() {
         if(!request.method.equals("GET")&&!request.method.equals("POST")){
             System.out.println("checked method which not allowed:"+request.method);
-            response.setData("<html><body><h1>Methon not allowed!</h1></body></html>");
+            response.setData("<html><body><h1>Method not allowed!</h1></body></html>");
             response.httpStatus="403 AccessDenied";
             return this.response;
         }
@@ -42,6 +42,18 @@ public class Manager {
         }
         else if(request.data.equals("/functions")){
             getFunctions(response);
+        }
+        else if(request.data.equals("/spots")){
+            getSpots(response);
+        }
+        else if(request.data.equals("/fee")){
+            getFee(response);
+        }
+        else if(request.data.equals("/in")){
+            getIn(response);
+        }
+        else if(request.data.equals("/out")){
+            getOut(response);
         }
         else{
             defReturn(response);

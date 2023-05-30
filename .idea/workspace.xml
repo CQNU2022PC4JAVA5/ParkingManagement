@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7875408d-f8b4-483a-8783-c3346f6b8a6e" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/api/login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/other/text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/MySQLDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/sql/SQLDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/FileReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Handler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Header.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/HttpServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Manager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Request.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/com/team5/websocket/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/fee.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/functions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/login_success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ParkingManagement/websites/spots.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/team5/websocket/Manager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +25,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2Oj6BbUcffPEW5TP3zVAVCqCRbb" />
   <component name="ProjectLevelVcsManager">
@@ -136,6 +123,8 @@
       <workItem from="1684932208103" duration="800000" />
       <workItem from="1684933139189" duration="18000" />
       <workItem from="1684933388049" duration="313000" />
+      <workItem from="1685449140000" duration="856000" />
+      <workItem from="1685451298378" duration="486000" />
     </task>
     <servers />
   </component>

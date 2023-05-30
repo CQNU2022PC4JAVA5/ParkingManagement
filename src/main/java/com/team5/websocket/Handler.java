@@ -3,7 +3,6 @@ package com.team5.websocket;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import com.team5.websocket.FileReader.
 
 public class Handler extends Thread{
     protected Socket socket;
