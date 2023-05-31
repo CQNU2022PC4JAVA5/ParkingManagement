@@ -29,6 +29,34 @@ CREATE TABLE `account` (
 
 insert  into `account`(`account`,`password`) values ('admin','21232f297a57a5a743894a0e4a801fc3');
 
+/*Table structure for table `fee` */
+
+DROP TABLE IF EXISTS `fee`;
+
+CREATE TABLE `fee` (
+  `freetime` int(11) default NULL,
+  `fisttime` int(11) default NULL,
+  `firstfee` double default NULL,
+  `secondtime` int(11) default NULL,
+  `secondfee` double default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `fee` */
+
+/*Table structure for table `spots` */
+
+DROP TABLE IF EXISTS `spots`;
+
+CREATE TABLE `spots` (
+  `id` int(8) NOT NULL,
+  `status` char(4) default NULL,
+  `no` char(16) default NULL,
+  `time` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `spots` */
+
 /*Table structure for table `token` */
 
 DROP TABLE IF EXISTS `token`;

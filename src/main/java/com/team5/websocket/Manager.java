@@ -1,5 +1,7 @@
 package com.team5.websocket;
-import static com.team5.api.login.*;
+import com.team5.api.Spots;
+
+import static com.team5.api.Login.*;
 import static com.team5.other.text.*;
 
 
@@ -20,7 +22,7 @@ public class Manager {
         if(request.data.equals("/")) {
             toLogin(response);
         }
-        if(request.data.equals("/login")) {
+        else if(request.data.equals("/login")) {
             if(token.isExpire()){
                 getLogin(response);
             }else{
@@ -79,7 +81,15 @@ public class Manager {
     }
     private void getSpots(Response response){
         FileReader reader = new FileReader();
-        response.setData(reader.readFile("src/main/java/websites/spots.html"));
+        String html=reader.readFile("src/main/java/websites/spots.html");
+        String head=getLeftString(html,"<spots>");
+        String foot=getLeftString(html,"<spots>");
+        String data="";
+        data+=head;
+        Spots spots = new Spots();
+        data+=spots.getHTML();
+        data+=foot;
+        response.setData(data);
     }
     private void getFee(Response response){
         FileReader reader = new FileReader();

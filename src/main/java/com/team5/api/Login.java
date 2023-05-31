@@ -5,7 +5,7 @@ import com.team5.sql.SQL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class login {
+public class Login {
     public static boolean login(String account,String password){
         SQL sql=new SQL();
         sql.getConnect();

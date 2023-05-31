@@ -59,38 +59,10 @@ public class Handler extends Thread{
             //System.out.println(header);
             }
         }
-        //favicon返回
-        if(manager.request.data.equals("/favicon.ico")){
-            //writer.write(readPicFile(),);
-        }else{
-            String data=manager.getResponse().getData();
-            writer.write(data);
-            writer.flush();
-        }
-    }
-    public byte[] readPicFile(String fileName) {
-        File file = new File(fileName);
-        if (!file.exists()) {
-            return null;
-        }
-        byte[] data = new byte[(int) file.length()];
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream(file);
-            fis.read(data);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        String data=manager.getResponse().getData();
+        writer.write(data);
+        writer.flush();
 
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return data;
     }
 }
 
