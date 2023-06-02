@@ -8,13 +8,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 
-public class Spots {
+public class Spots extends Fee{
     class spot{
         private int id;
-        private char[] status;
-        private char[] no;
+        private String status;
+        private String no;
         private Timestamp time;
         public spot(int id){
             this.id=id;
@@ -28,8 +30,8 @@ public class Spots {
                 ps.setInt(1,this.id);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                    this.status= rs.getString("status").toCharArray();
-                    this.no= rs.getString("no").toCharArray();
+                    this.status= rs.getString("status");
+                    this.no= rs.getString("no");
                     this.time=rs.getTimestamp("time");
                     rs.close();
                     ps.close();
@@ -45,17 +47,17 @@ public class Spots {
             return this.id;
         }
 
-        public char[] getStatus() {
+        public String getStatus() {
             return status;
         }
 
-        public void setStatus(char[] status) {
+        public void setStatus(String status) {
             SQL sql = new SQL();
             sql.getConnect();
             try {
                 PreparedStatement ps = sql.conn.prepareStatement("update spots set status=? WHERE id=?;");
                 ps.setInt(2, this.id);
-                ps.setString(1, Arrays.toString(status));
+                ps.setString(1, status);
                 int rows = ps.executeUpdate();
                 this.status = status;
                 System.out.println("更新了" + rows + "条数据");
@@ -66,17 +68,17 @@ public class Spots {
             sql.disConnect();
         }
 
-        public char[] getNo() {
+        public String getNo() {
             return no;
         }
 
-        public void setNo(char[] no) {
+        public void setNo(String no) {
             SQL sql = new SQL();
             sql.getConnect();
             try {
                 PreparedStatement ps = sql.conn.prepareStatement("update spots set no=? WHERE id=?;");
                 ps.setInt(2, this.id);
-                ps.setString(1, Arrays.toString(no));
+                ps.setString(1, no);
                 int rows = ps.executeUpdate();
                 this.no = no;
                 System.out.println("更新了" + rows + "条数据");
@@ -119,7 +121,9 @@ public class Spots {
     public spot spot8 = new spot(8);
     public spot spot9 = new spot(9);
     public spot spot10 = new spot(10);
-    public Spots(){}
+    public Spots(){
+        super();
+    }
     public static String timestamp_toString(Timestamp timestamp) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(timestamp);
@@ -128,13 +132,41 @@ public class Spots {
         String result="";
         result+="<tr>\n\r";
         result+="<td>车位"+spot.getId()+"</td>\n\r";
-        result+="<td>"+ Arrays.toString(spot.getStatus()) +"</td>\n\r";
-        result+="<td>"+ Arrays.toString(spot.getNo()) +"</td>\n\r";
-        result+="<td>"+timestamp_toString(spot.getTime())+"</td>\n\r";
-        result+="<td> </td>\n\r";
-        result+="</tr>\n\r";
+        result+="<td>"+ spot.getStatus() +"</td>\n\r";
+        if(spot.getStatus().equals("空闲")){
+            result += "<td></td>\n\r";
+            result += "<td></td>\n\r";
+            result += "<td></td>\n\r";
+        }
+        else {
+            result += "<td>" + spot.getNo() + "</td>\n\r";
+            result += "<td>" + timestamp_toString(spot.getTime()) + "</td>\n\r";
+            result += "<td>"+calculateFee(spot.getTime())+"</td>\n\r";
+        }
+
+        result += "</tr>\n\r";
         return result;
     }
+    public double calculateFee(Timestamp time){
+        int minutes=getMinutes(time);
+        minutes -=super.getFreetime();
+        if(minutes<=0){
+            return 0;
+        }
+        if (minutes<=getFirsttime()){
+            return minutes*getFirstfee();
+        }
+        minutes-=getFirsttime();
+        return getFirsttime()*getFirstfee()+minutes*getSecondfee();
+    }
+
+    int getMinutes(Timestamp time) {
+        Instant instant = time.toInstant();
+        Instant now = Instant.now();
+        long minutes = Duration.between(instant, now).toMinutes();
+        return (int) minutes;
+    }
+
     public String getHTML(){
         String result="";
         result+=getHTML_single(spot1);
@@ -148,6 +180,5 @@ public class Spots {
         result+=getHTML_single(spot9);
         result+=getHTML_single(spot10);
         return result;
-
     }
 }

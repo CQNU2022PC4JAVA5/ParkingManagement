@@ -1,4 +1,5 @@
 package com.team5.websocket;
+import com.team5.api.Fee;
 import com.team5.api.Spots;
 
 import static com.team5.api.Login.*;
@@ -83,7 +84,7 @@ public class Manager {
         FileReader reader = new FileReader();
         String html=reader.readFile("src/main/java/websites/spots.html");
         String head=getLeftString(html,"<spots>");
-        String foot=getLeftString(html,"<spots>");
+        String foot=getRightString(html,"<spots>");
         String data="";
         data+=head;
         Spots spots = new Spots();
@@ -93,7 +94,11 @@ public class Manager {
     }
     private void getFee(Response response){
         FileReader reader = new FileReader();
-        response.setData(reader.readFile("src/main/java/websites/fee.html"));
+        Fee fee = new Fee();
+        String data="";
+        data=reader.readFile("src/main/java/websites/fee.html");
+        data= fee.changeHTML(data);
+        response.setData(data);
     }
     private void getIn(Response response){
         FileReader reader = new FileReader();

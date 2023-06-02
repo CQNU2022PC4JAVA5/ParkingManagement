@@ -1,5 +1,6 @@
 package com.team5.api;
 
+import com.team5.other.text;
 import com.team5.sql.SQL;
 
 import java.sql.PreparedStatement;
@@ -137,4 +138,14 @@ public class Fee {
         }
         sql.disConnect();
     }
+    public String changeHTML(String HTML){
+        String result = HTML;
+        result= text.getLeftString(result,"id=\"textfield1\"")+"id=\"textfield1\" value=\""+getFreetime()+"\""+text.getRightString(result,"id=\"textfield1\"");
+        result= text.getLeftString(result,"id=\"textfield2\"")+"id=\"textfield2\" value=\""+getFirsttime()+"\""+text.getRightString(result,"id=\"textfield2\"");
+        result= text.getLeftString(result,"id=\"textfield3\"")+"id=\"textfield3\" value=\""+getFirstfee()+"\""+text.getRightString(result,"id=\"textfield3\"");
+        result= text.getLeftString(result,"id=\"textfield4\"")+"id=\"textfield4\" value=\""+getSecondtime()+"\""+text.getRightString(result,"id=\"textfield4\"");
+        result= text.getLeftString(result,"id=\"textfield5\"")+"id=\"textfield5\" value=\""+getSecondfee()+"\""+text.getRightString(result,"id=\"textfield5\"");
+        return result;
+    }
+
 }
