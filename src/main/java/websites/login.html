@@ -1,9 +1,53 @@
 ﻿<html>
 <head>
-  <title>登录网页</title>
+  <title>登录</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+            background-position: center; background-size: cover;
+    }form {
+      width: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid rgb(237, 237, 237);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      background-color: rgba(183, 183, 183, 0.8);
+    }label {
+      display: block;
+      margin-bottom: 10px; color: #333;
+    }input {
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    } button {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      background-color: #397ab6;
+      cursor: pointer;
+    } #title {
+      margin-top: 160px;
+    } h1{
+      color:#51ece5;
+    }
+  </style>
 </head>
 <body>
+  <div id="title" align="center">
+    <h1>停车场管理系统</h1>
+  </div>
+
   <form id="login-form" action="/login" method="get">
     <div>
       <label for="username">账号：</label>
