@@ -2,21 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>out</title>
 </head>
 
 <body>
 <label for="textfield">车牌号:</label>
 <input type="text" name="textfield" id="textfield">
-<p>&nbsp;</p>
-<label for="textfield2">车位号:</label>
-<input type="text" name="textfield2" id="textfield2">
-<p>
-<br>
-
-
-</p><input type="submit">
+<input type="submit" name="submit" id="submit" value="提交">
 <input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
+<p>&nbsp;</p>
+<br>
 </table>
 
 <input type="text" id="input" />
@@ -25,18 +20,15 @@
 <script>
     // 获取所有的单元格
     const cells = document.querySelectorAll("td");
-
     // 遍历每个单元格
     for (let cell of cells) {
         // 设置contenteditable属性为true
         cell.setAttribute("contenteditable", "true");
-
         // 添加失去焦点事件监听器
         cell.addEventListener("blur", function () {
             // 获取当前单元格的id和内容
             let id = cell.parentNode.firstChild.textContent;
             let content = cell.textContent;
-
             // 保存到本地存储中，以id为键，内容为值
             localStorage.setItem(id, content);
         });
@@ -52,10 +44,8 @@
             // 获取键和值
             let key = localStorage.key(i);
             let value = localStorage.getItem(key);
-
             // 在控制台中显示或发送到服务器
             console.log(key + ": " + value);
-            // fetch("/save", {method: "POST", body: JSON.stringify({key: value})});
         }
     });
 

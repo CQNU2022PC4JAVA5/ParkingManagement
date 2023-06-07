@@ -29,13 +29,16 @@ public class Fee {
                 this.firstfee=rs.getDouble("firstfee");
                 this.secondtime=rs.getInt("secondtime");
                 this.secondfee=rs.getDouble("secondfee");
+
+                rs.close();
+                ps.close();
+                sql.disConnect();
             }
             rs.close();
-            ps.close();
-            sql.disConnect();
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
+        sql.disConnect();
     }
     public int getFreetime() {
         return freetime;
