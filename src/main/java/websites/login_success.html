@@ -7,12 +7,19 @@ function redirect(){
   window.location.href = "/functions";
 }
 </script>
+<style>
+  body {
+          font-family: Arial, sans-serif;
+          background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+          background-position: center; background-size: cover;
+  }
+</style>
 </head>
 <body>
-<h1>登录成功</h1>
-<p>您已经成功登录，3秒后将自动跳转到功能页面。</p>
+<h1 align="center" style="color:white ;font-size: 60px; padding: 120px;">登录成功</h1>
+<p  align="center" style="color:white ;font-size: 30px; padding: 10px;">您已经成功登录，2秒后将自动跳转到功能页面。</p>
 <script>
-setTimeout(redirect, 3000);
+setTimeout(redirect, 2000);
 </script>
 </body>
 </html>
