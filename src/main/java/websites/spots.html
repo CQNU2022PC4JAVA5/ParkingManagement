@@ -1,25 +1,63 @@
-﻿<!doctype html>
-<html>
+﻿<html>
 <head>
 <meta charset="utf-8">
 <title>查看所有车位</title>
+<style>
+  body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+            background-position: center; background-size: cover;
+    }
+  div {
+    margin: auto;
+    width: 800px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #c4d6e6c2;
+  }
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #E0E0E0;
+  }
+  input[type=button] {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #FF0000;
+  }
+</style>
 </head>
 
-<body><table width="800" border="1">
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>状态</td>
-      <td>车牌号</td>
-      <td>时间</td>
-      <td>费用</td>
-    </tr>
+<body style="padding-top: 30px;">
+<div>
+  <h1 align="center" style="color:white ;font-size: 50px; padding: 30px;">所有车位</h1>
+<table width="800" border="1">
+ <tbody>
+ <tr>
+ <td>id</td>
+ <td>状态</td>
+ <td>车牌号</td>
+ <td>时间</td>
+ <td>费用</td>
+ </tr>
 
-    <spots>
-      
-  </tbody>
+ <spots>
+ 
+ </tbody>
 </table>
-
+</div>
 <input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
 
 
