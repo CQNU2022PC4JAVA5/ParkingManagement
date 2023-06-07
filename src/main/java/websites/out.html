@@ -1,20 +1,33 @@
-﻿<!doctype html>
-<html>
+﻿<html>
 <head>
 <meta charset="utf-8">
 <title>out</title>
 </head>
-
 <body>
-<label for="textfield">车牌号:</label>
-<input type="text" name="textfield" id="textfield">
-<input type="submit" name="submit" id="submit" value="提交">
-<input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
-<p>&nbsp;</p>
-<br>
-<script>
-
-
-</script>
+<form id="out-form" action="/out" method="get">
+    <label for="textfield">车牌号:</label>
+    <input type="text" name="pno" id="pno">
+    </div>
+    <button type="submit" id="out-button">提交</button>
+    <input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
+    </form>
+    <script>
+        // 获取表单元素
+        var form = document.getElementById("out-form");
+        var pno = document.getElementById("pno");
+        var button = document.getElementById("out-button");
+        // 添加按钮点击事件
+        button.addEventListener("click", function(event) {
+            // 阻止表单默认提交行为
+            event.preventDefault();
+            // 检查输入是否为空
+            if (pno.value === "") {
+                alert("请输入车牌号");
+                return;
+            }
+            // 提交表单
+            form.submit();
+        });
+    </script>
 </body>
 </html>
