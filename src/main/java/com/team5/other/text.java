@@ -1,6 +1,20 @@
 package com.team5.other;
 
+import java.io.UnsupportedEncodingException;
+
 public class text {
+    public static String getURLDecoderString(String str) {
+        String result = "";
+        if (null == str) {
+            return "";
+        }
+        try {
+            result = java.net.URLDecoder.decode(str, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
     public static String getRightString(String original, String specific) {
         if (original == null || specific == null) {
             return "";
