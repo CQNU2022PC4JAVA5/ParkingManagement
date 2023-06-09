@@ -200,11 +200,59 @@ public class Spots extends Fee{
         }
         return false;
     }
-    public boolean outSpot(spot spot){
-        if(spot.getStatus().equals("使用")){
-            spot.setStatus("空闲");
+    public boolean outSpot(String no){
+        spot tmp;
+        tmp=spot1;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
             return true;
         }
+        tmp=spot2;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot3;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot4;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot5;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot6;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot7;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot8;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot9;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot10;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+
         return false;
     }
 }
