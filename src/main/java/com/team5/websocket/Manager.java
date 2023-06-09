@@ -23,6 +23,10 @@ public class Manager {
         if(request.data.equals("/")) {
             toLogin(response);
         }
+        else if(request.data.equals("/favicon.ico")){
+            response.httpStatus="302 moved";
+            response.addHearder("Location: http://cqnu.baiyun.work/d/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/java/favicon.ico");
+        }
         else if(request.data.equals("/login")) {
             if(token.isExpire()){
                 getLogin(response);
@@ -108,10 +112,17 @@ public class Manager {
             wno= getRightString(request.data,"wno=");
             outSpot(response,Integer.parseInt(wno));
         }
+        else if(request.data.equals("/logout")){
+            getlogout(response);
+        }
         else{
             defReturn(response);
         }
         return this.response;
+    }
+    private void getlogout(Response response){
+        response.addHearder("Set-Cookie: token= ");
+        toLogin(response);
     }
     private void inSpot(Response response,String spot,String no){
         Spots spots = new Spots();
