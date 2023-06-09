@@ -1,7 +1,48 @@
 ﻿<html>
 <head>
-<meta charset="utf-8">
-<title>out</title>
+    <meta charset="utf-8">
+    <title>车辆出库</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+            background-position: center; background-size: cover;
+        }
+        label {
+            display: block;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        input[type=text] {
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        button[type=submit] {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: #4CAF50;
+        }
+        input[type=button] {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: #FF0000;
+        }
+    </style>
 </head>
 <body>
 <form id="out-form" action="/out" method="get">
