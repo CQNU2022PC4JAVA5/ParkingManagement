@@ -194,7 +194,7 @@ public class Token {
         ResultSet rs = sql.getResultSet("SELECT expire FROM token WHERE token='"+tokenkey+"'");
         try {
             while (rs.next()) {
-                Date expire = rs.getDate("expire");
+                Date expire = rs.getTimestamp("expire");
                 rs.close();
                 sql.delStatement();
                 sql.disConnect();

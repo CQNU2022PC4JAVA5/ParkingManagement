@@ -43,6 +43,9 @@ public class Manager {
         else if(token.isExpire()){
             toLogin(response);
         }
+        else if(token.isNeedUpdate(token.tokenkey)){
+            token.update();
+        }
         else if(request.data.equals("/functions")){
             getFunctions(response);
         }
@@ -51,6 +54,25 @@ public class Manager {
         }
         else if(request.data.equals("/fee")){
             getFee(response);
+        }
+        else if(request.data.startsWith("/fee?freetime=")&&request.data.contains("&firsttime=")&&request.data.contains("&firstfee=")&&request.data.contains("&secondtime=")&&request.data.contains("&secondfee=")){
+            String freetime,firsttime,firstfee,secondtime,secondfee;
+
+            freetime= getSubString(request.data,"freetime=","&firsttime=");
+            firsttime= getSubString(request.data,"firsttime=","&firstfee=");
+            firstfee= getSubString(request.data,"firstfee=","&secondtime=");
+            secondtime= getSubString(request.data,"secondtime=","&secondfee=");
+            secondfee= getRightString(request.data,"secondfee=");
+
+            Fee fee = new Fee();
+            fee.setFreetime(Integer.parseInt(freetime));
+            fee.setFirsttime(Integer.parseInt(firsttime));
+            fee.setFirstfee(Double.parseDouble(firstfee));
+            fee.setSecondtime(Integer.parseInt(secondtime));
+            fee.setSecondfee(Double.parseDouble(secondfee));
+
+            toFunctions(response);
+
         }
         else if(request.data.equals("/in")){
             getIn(response);
@@ -62,14 +84,29 @@ public class Manager {
             pno= getURLDecoderString(pno);
             inSpot(response,wno,pno);
         }
+        else if(request.data.startsWith("/fast-in?wno=")){
+            getIn_fast(response,getRightString(request.data,"?wno="));
+        }
+        else if(request.data.startsWith("/fast-in?pno=")&&request.data.contains("&wno=")){
+            String pno,wno;
+            pno= getSubString(request.data,"pno=","&");
+            wno= getRightString(request.data,"wno=");
+            pno= getURLDecoderString(pno);
+            inSpot_fast(response,wno,pno);
+        }
         else if(request.data.equals("/out")){
             getOut(response);
         }
         else if(request.data.startsWith("/out?pno=")){
-            String pno,wno;
+            String pno;
             pno= getRightString(request.data,"pno=");
             pno= getURLDecoderString(pno);
             outSpot(response,pno);
+        }
+        else if(request.data.startsWith("/fast-out?wno=")){
+            String wno;
+            wno= getRightString(request.data,"wno=");
+            outSpot(response,Integer.parseInt(wno));
         }
         else{
             defReturn(response);
@@ -79,50 +116,41 @@ public class Manager {
     private void inSpot(Response response,String spot,String no){
         Spots spots = new Spots();
         boolean result = false;
-        switch (spot){
-            case "1":
-                result=spots.inSpot(spots.spot1,no);
-                break;
-            case "2":
-                result=spots.inSpot(spots.spot2,no);
-                break;
-            case "3":
-                result=spots.inSpot(spots.spot3,no);
-                break;
-            case "4":
-                result=spots.inSpot(spots.spot4,no);
-                break;
-            case "5":
-                result=spots.inSpot(spots.spot5,no);
-                break;
-            case "6":
-                result=spots.inSpot(spots.spot6,no);
-                break;
-            case "7":
-                result=spots.inSpot(spots.spot7,no);
-                break;
-            case "8":
-                result=spots.inSpot(spots.spot8,no);
-                break;
-            case "9":
-                result=spots.inSpot(spots.spot9,no);
-                break;
-            case "10":
-                result=spots.inSpot(spots.spot10,no);
-                break;
-            default:
-                break;
-        }
+        result=spots.inSpot(Integer.parseInt(spot),no);
         if(result){
             getin_success(response);
         }else{
             getin_bad(response);
         }
-
     }
-    private void outSpot(Response response,String no){
+    private void inSpot_fast(Response response,String spot,String no){
         Spots spots = new Spots();
-        spots.outSpot(no);
+        boolean result = false;
+        result=spots.inSpot(Integer.parseInt(spot),no);
+        toSpots(response);
+    }
+
+    private void getIn_fast(Response response,String wno){
+        FileReader reader = new FileReader();
+        String html=reader.readFile("src/main/java/websites/in.html");
+        html = getLeftString(html,"name=\"wno\"")+"name=\"wno\""+" value=\""+wno+"\" style=\"display:none\""+getRightString(html,"name=\"wno\"");
+        html = getLeftString(html,"functions")+"spots"+getRightString(html,"functions");
+        html = getLeftString(html,"/in")+"/fast-in"+getRightString(html,"/in");
+        html = getLeftString(html,"for=\"textfield2\"")+"for=\"textfield2\" style=\"display:none\""+getRightString(html,"for=\"textfield2\"");
+        response.setData(html);
+    }
+    private void outSpot(Response response,String pno){
+        Spots spots = new Spots();
+        boolean result = spots.outSpot(pno);
+        if(result){
+            getout_success(response);
+        }else{
+            getout_bad(response);
+        }
+    }
+    private void outSpot(Response response,int wno){
+        Spots spots = new Spots();
+        spots.outSpot(wno);
         toSpots(response);
     }
     private void getin_success(Response response){
@@ -132,6 +160,14 @@ public class Manager {
     private void getin_bad(Response response){
         FileReader reader = new FileReader();
         response.setData(reader.readFile("src/main/java/websites/in_bad.html"));
+    }
+    private void getout_success(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/out_success.html"));
+    }
+    private void getout_bad(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/out_bad.html"));
     }
     private void getLogin_success(Response response,String account){
         FileReader reader = new FileReader();

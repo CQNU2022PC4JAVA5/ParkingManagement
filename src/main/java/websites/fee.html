@@ -20,6 +20,17 @@
       border-radius: 5px;
       padding: 5px;
     }
+    button[type=submit] {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      background-color: #4CAF50;
+    }
     input[type=submit] {
       display: block;
       margin: 20px auto;
@@ -47,20 +58,49 @@
 </head>
 
 <body>
-    <h1 align="center" style="color:white ;font-size: 50px; padding: 30px;">费用设置</h1>
+<form id="fee-form" action="/fee" method="get">
+<h1 align="center" style="color:white ;font-size: 50px; padding: 30px;">费用设置</h1>
 <div align="center">
-<label for="textfield" align="center">免费时长（分钟）:</label>
-<input type="text" name="textfield1" id="textfield1" align="center">
-<label for="textfield2" align="center">第一档时间（分钟）:</label>
-<input type="text" name="textfield2" id="textfield2" align="center">
-<label for="textfield3" align="center">第一档每分钟费用（元）:</label>
-<input type="text" name="textfield3" id="textfield3" align="center">
-<label for="textfield4" align="center">第二档时间（分钟）:</label>
-<input type="text" name="textfield4" id="textfield4" align="center">
-<label for="textfield5" align="center">第二档每分钟费用（元）:</label>
-<input type="text" name="textfield5" id="textfield5" align="center">
+<label for="freetime" align="center">免费时长（分钟）:</label>
+<input type="text" name="freetime" id="freetime" align="center">
+<label for="firsttime" align="center">第一档时间（分钟）:</label>
+<input type="text" name="firsttime" id="firsttime" align="center">
+<label for="firstfee" align="center">第一档每分钟费用（元）:</label>
+<input type="text" name="firstfee" id="firstfee" align="center">
+<label for="secondtime" align="center">第二档时间（分钟）:</label>
+<input type="text" name="secondtime" id="secondtime" align="center">
+<label for="secondfee" align="center">第二档每分钟费用（元）:</label>
+<input type="text" name="secondfee" id="secondfee" align="center">
 </div>
-<input type="submit">
+<button type="submit" id="fee-button">提交</button>
 <input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
+</form>
+
+<script>
+  // 获取表单元素
+  var form = document.getElementById("fee-form");
+
+  var freetime = document.getElementById("freetime");
+  var firsttime = document.getElementById("firsttime");
+  var firstfee = document.getElementById("firstfee");
+  var secondtime = document.getElementById("secondtime");
+  var secondfee = document.getElementById("secondfee");
+
+  var button = document.getElementById("fee-button");
+  // 添加按钮点击事件
+  button.addEventListener("click", function(event) {
+      // 阻止表单默认提交行为
+      event.preventDefault();
+      // 检查输入是否为空
+      if (freetime.value === "" || firsttime.value === "" || firstfee.value === "" || secondtime.value === "" || secondfee.value === "") {
+          alert("请不要留空！");
+          return;
+      }
+      // 提交表单
+      form.submit();
+  });
+</script>
+
+
 </body>
 </html>
