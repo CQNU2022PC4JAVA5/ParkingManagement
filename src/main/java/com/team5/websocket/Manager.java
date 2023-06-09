@@ -65,6 +65,12 @@ public class Manager {
         else if(request.data.equals("/out")){
             getOut(response);
         }
+        else if(request.data.startsWith("/out?pno=")){
+            String pno,wno;
+            pno= getRightString(request.data,"pno=");
+            pno= getURLDecoderString(pno);
+            outSpot(response,pno);
+        }
         else{
             defReturn(response);
         }
@@ -114,42 +120,9 @@ public class Manager {
         }
 
     }
-    private void outSpot(Response response,String spot,String no){
+    private void outSpot(Response response,String no){
         Spots spots = new Spots();
-        switch (spot){
-            case "1":
-                spots.outSpot(spots.spot1);
-                break;
-            case "2":
-                spots.outSpot(spots.spot2);
-                break;
-            case "3":
-                spots.outSpot(spots.spot3);
-                break;
-            case "4":
-                spots.outSpot(spots.spot4);
-                break;
-            case "5":
-                spots.outSpot(spots.spot5);
-                break;
-            case "6":
-                spots.outSpot(spots.spot6);
-                break;
-            case "7":
-                spots.outSpot(spots.spot7);
-                break;
-            case "8":
-                spots.outSpot(spots.spot8);
-                break;
-            case "9":
-                spots.outSpot(spots.spot9);
-                break;
-            case "10":
-                spots.outSpot(spots.spot10);
-                break;
-            default:
-                break;
-        }
+        spots.outSpot(no);
         toSpots(response);
     }
     private void getin_success(Response response){
