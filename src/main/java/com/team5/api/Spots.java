@@ -3,6 +3,8 @@ package com.team5.api;
 import com.team5.sql.SQL;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -128,6 +130,10 @@ public class Spots extends Fee{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(timestamp);
     }
+    public static String modifyMoney(double money) {
+        BigDecimal bd = new BigDecimal(money).setScale(2, RoundingMode.UP);
+        return bd.toString();
+    }
     String getHTML_single(spot spot){
         String result="";
         result+="<tr>\n\r";
@@ -141,7 +147,7 @@ public class Spots extends Fee{
         else {
             result += "<td>" + spot.getNo() + "</td>\n\r";
             result += "<td>" + timestamp_toString(spot.getTime()) + "</td>\n\r";
-            result += "<td>"+calculateFee(spot.getTime())+"</td>\n\r";
+            result += "<td>"+modifyMoney(calculateFee(spot.getTime()))+"</td>\n\r";
         }
 
         result += "</tr>\n\r";
@@ -157,10 +163,13 @@ public class Spots extends Fee{
             return minutes*getFirstfee();
         }
         minutes-=getFirsttime();
-        return getFirsttime()*getFirstfee()+minutes*getSecondfee();
+        if(minutes<=getSecondtime()){
+            return getFirsttime()*getFirstfee()+minutes*getSecondfee();
+        }
+        return getFirsttime()*getFirstfee()+getSecondtime()*getSecondfee();
     }
 
-    int getMinutes(Timestamp time) {
+        int getMinutes(Timestamp time) {
         Instant instant = time.toInstant();
         Instant now = Instant.now();
         long minutes = Duration.between(instant, now).toMinutes();
@@ -180,5 +189,70 @@ public class Spots extends Fee{
         result+=getHTML_single(spot9);
         result+=getHTML_single(spot10);
         return result;
+    }
+
+    public boolean inSpot(spot spot,String no){
+        if(spot.getStatus().equals("空闲")){
+             spot.setStatus("使用");
+             spot.setTime(new Timestamp(System.currentTimeMillis()));
+             spot.setNo(no);
+            return true;
+        }
+        return false;
+    }
+    public boolean outSpot(String no){
+        spot tmp;
+        tmp=spot1;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot2;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot3;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot4;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot5;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot6;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot7;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot8;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot9;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+        tmp=spot10;
+        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
+            tmp.setStatus("空闲");
+            return true;
+        }
+
+        return false;
     }
 }

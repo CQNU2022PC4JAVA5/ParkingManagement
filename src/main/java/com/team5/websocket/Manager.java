@@ -55,13 +55,83 @@ public class Manager {
         else if(request.data.equals("/in")){
             getIn(response);
         }
+        else if(request.data.startsWith("/in?pno=")&&request.data.contains("&wno=")){
+            String pno,wno;
+            pno= getSubString(request.data,"pno=","&");
+            wno= getRightString(request.data,"wno=");
+            pno= getURLDecoderString(pno);
+            inSpot(response,wno,pno);
+        }
         else if(request.data.equals("/out")){
             getOut(response);
+        }
+        else if(request.data.startsWith("/out?pno=")){
+            String pno,wno;
+            pno= getRightString(request.data,"pno=");
+            pno= getURLDecoderString(pno);
+            outSpot(response,pno);
         }
         else{
             defReturn(response);
         }
         return this.response;
+    }
+    private void inSpot(Response response,String spot,String no){
+        Spots spots = new Spots();
+        boolean result = false;
+        switch (spot){
+            case "1":
+                result=spots.inSpot(spots.spot1,no);
+                break;
+            case "2":
+                result=spots.inSpot(spots.spot2,no);
+                break;
+            case "3":
+                result=spots.inSpot(spots.spot3,no);
+                break;
+            case "4":
+                result=spots.inSpot(spots.spot4,no);
+                break;
+            case "5":
+                result=spots.inSpot(spots.spot5,no);
+                break;
+            case "6":
+                result=spots.inSpot(spots.spot6,no);
+                break;
+            case "7":
+                result=spots.inSpot(spots.spot7,no);
+                break;
+            case "8":
+                result=spots.inSpot(spots.spot8,no);
+                break;
+            case "9":
+                result=spots.inSpot(spots.spot9,no);
+                break;
+            case "10":
+                result=spots.inSpot(spots.spot10,no);
+                break;
+            default:
+                break;
+        }
+        if(result){
+            getin_success(response);
+        }else{
+            getin_bad(response);
+        }
+
+    }
+    private void outSpot(Response response,String no){
+        Spots spots = new Spots();
+        spots.outSpot(no);
+        toSpots(response);
+    }
+    private void getin_success(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/in_success.html"));
+    }
+    private void getin_bad(Response response){
+        FileReader reader = new FileReader();
+        response.setData(reader.readFile("src/main/java/websites/in_bad.html"));
     }
     private void getLogin_success(Response response,String account){
         FileReader reader = new FileReader();

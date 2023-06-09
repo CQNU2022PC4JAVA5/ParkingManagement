@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<html>
 <head>
     <meta charset="utf-8">
@@ -70,5 +71,86 @@
             form.submit();
         });
     </script>
+=======
+<html>
+<head>
+<meta charset="utf-8">
+<title>车辆出库</title>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+            background-position: center; background-size: cover;
+    }
+    label {
+  display: block;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+input[type=text] {
+  width: 100px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 5px;
+}
+button[type=submit] {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  background-color: #4CAF50;
+}
+input[type=button] {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  background-color: #FF0000;
+}
+  </style>
+</head>
+
+<body>
+<h1 align="center" style="color:white ;font-size: 50px; padding: 30px;">车辆出库</h1>
+<div align="center">
+<form id="out-form" action="/out" method="get">
+<label for="textfield">车牌号:</label>
+<input type="text" name="pno" id="pno">
+<button type="submit" id="out-button">提交</button>
+<input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
+<p>&nbsp;</p>
+<br>
+</table>
+</form>
+</div>
+
+<script>
+    // 获取表单元素
+    var form = document.getElementById("out-form");
+    var pno = document.getElementById("pno");
+    var button = document.getElementById("out-button");
+    // 添加按钮点击事件
+    button.addEventListener("click", function(event) {
+        // 阻止表单默认提交行为
+        event.preventDefault();
+        // 检查输入是否为空
+        if (pno.value === "") {
+            alert("请输入车牌号");
+            return;
+        }
+        // 提交表单
+        form.submit();
+    });
+</script>
+>>>>>>> main
 </body>
 </html>
