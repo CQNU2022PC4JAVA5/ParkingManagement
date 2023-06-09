@@ -169,7 +169,7 @@ public class Spots extends Fee{
         return getFirsttime()*getFirstfee()+getSecondtime()*getSecondfee();
     }
 
-    int getMinutes(Timestamp time) {
+        int getMinutes(Timestamp time) {
         Instant instant = time.toInstant();
         Instant now = Instant.now();
         long minutes = Duration.between(instant, now).toMinutes();
@@ -189,5 +189,22 @@ public class Spots extends Fee{
         result+=getHTML_single(spot9);
         result+=getHTML_single(spot10);
         return result;
+    }
+
+    public boolean inSpot(spot spot,String no){
+        if(spot.getStatus().equals("空闲")){
+             spot.setStatus("使用");
+             spot.setTime(new Timestamp(System.currentTimeMillis()));
+             spot.setNo(no);
+            return true;
+        }
+        return false;
+    }
+    public boolean outSpot(spot spot){
+        if(spot.getStatus().equals("使用")){
+            spot.setStatus("空闲");
+            return true;
+        }
+        return false;
     }
 }
