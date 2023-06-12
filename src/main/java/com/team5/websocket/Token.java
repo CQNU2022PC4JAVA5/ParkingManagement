@@ -59,7 +59,7 @@ public class Token {
         sql.getConnect();
 
         try {
-            PreparedStatement ps = sql.conn.prepareStatement("SELECT account FROM token WHERE account=?;");
+            PreparedStatement ps = sql.conn.prepareStatement("SELECT account FROM account WHERE account=?;");
             ps.setString(1,account);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -154,7 +154,7 @@ public class Token {
             return;
         }
         if(tokenkey.equals("")){
-            return;
+            tokenkey=getTokenkey(account);
         }
         SQL sql = new SQL();
         sql.getConnect();
@@ -182,6 +182,30 @@ public class Token {
         }
         sql.disConnect();
     }
+    public void delToken(String text){
+        if(isRightAccount(text)){
+            if(haveToken(getTokenkey(text))){
+                text=getTokenkey(text);
+            }
+        }
+        if(!haveToken(text)){
+            return;
+        }
+        SQL sql = new SQL();
+        sql.getConnect();
+        try {
+            PreparedStatement ps = sql.conn.prepareStatement("DELETE FROM token WHERE token=?;");
+                ps.setString(1, text);
+                int rows = ps.executeUpdate();
+                System.out.println("删除了" + rows + "条数据");
+                ps.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        sql.disConnect();
+    }
+
 
     public Date getNewExpireDate(){//token过期时间为30分钟，更新时间为超过10分钟
         Date now = new Date();
@@ -194,7 +218,7 @@ public class Token {
         ResultSet rs = sql.getResultSet("SELECT expire FROM token WHERE token='"+tokenkey+"'");
         try {
             while (rs.next()) {
-                Date expire = rs.getDate("expire");
+                Date expire = rs.getTimestamp("expire");
                 rs.close();
                 sql.delStatement();
                 sql.disConnect();

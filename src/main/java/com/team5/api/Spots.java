@@ -123,6 +123,8 @@ public class Spots extends Fee{
     public spot spot8 = new spot(8);
     public spot spot9 = new spot(9);
     public spot spot10 = new spot(10);
+
+    public spot spots[] = {spot1,spot2,spot3,spot4,spot5,spot6,spot7,spot8,spot9,spot10};
     public Spots(){
         super();
     }
@@ -143,11 +145,16 @@ public class Spots extends Fee{
             result += "<td></td>\n\r";
             result += "<td></td>\n\r";
             result += "<td></td>\n\r";
+            result += "<td>"+"<button onclick=\"window.location.href='fast-in?wno="+ spot.id+"'\" type=\"button\" id=\"add\">入场</button>"+"</td>\n\r";
+            result += "<td></td>\n\r";
         }
         else {
             result += "<td>" + spot.getNo() + "</td>\n\r";
             result += "<td>" + timestamp_toString(spot.getTime()) + "</td>\n\r";
             result += "<td>"+modifyMoney(calculateFee(spot.getTime()))+"</td>\n\r";
+            result += "<td></td>\n\r";
+            result += "<td>"+"<button onclick=\"window.location.href='fast-out?wno="+ spot.id+"'\" type=\"button\" id=\"add\">出场</button>"+"</td>\n\r";
+
         }
 
         result += "</tr>\n\r";
@@ -191,68 +198,40 @@ public class Spots extends Fee{
         return result;
     }
 
-    public boolean inSpot(spot spot,String no){
-        if(spot.getStatus().equals("空闲")){
-             spot.setStatus("使用");
-             spot.setTime(new Timestamp(System.currentTimeMillis()));
-             spot.setNo(no);
-            return true;
+    public boolean inSpot(int spotid,String no){
+        for(spot tmp:spots){
+            if(tmp.id==spotid){
+                if(tmp.getStatus().equals("空闲")){
+                    tmp.setStatus("使用");
+                    tmp.setTime(new Timestamp(System.currentTimeMillis()));
+                    tmp.setNo(no);
+                    return true;
+                }
+            }
         }
         return false;
     }
     public boolean outSpot(String no){
-        spot tmp;
-        tmp=spot1;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot2;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot3;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot4;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot5;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot6;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot7;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot8;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot9;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
-        }
-        tmp=spot10;
-        if(tmp.getStatus().equals("使用")&&tmp.getNo().equals(no)){
-            tmp.setStatus("空闲");
-            return true;
+        for(spot tmp:spots){
+            if(tmp.getNo().equals(no)){
+                if(tmp.getStatus().equals("使用")){
+                    tmp.setStatus("空闲");
+                    return true;
+                }
+            }
         }
 
+        return false;
+    }
+    public boolean outSpot(int id){
+        for(spot tmp:spots){
+            if(tmp.id==id){
+                if(tmp.getStatus().equals("使用")){
+                    tmp.setStatus("空闲");
+                    return true;
+                }
+            }
+        }
         return false;
     }
 }
