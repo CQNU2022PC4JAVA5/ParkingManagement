@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title>账号管理</title>
+<style>
+  body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.cncn3.cn/content/images/system/home_cover_1640871227946_66a5be.png');
+            background-position: center; background-size: cover;
+    }
+  div {
+    margin: auto;
+    width: 800px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #c4d6e6c2;
+  }
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #E0E0E0;
+  }
+  input[type=button][name=create] {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #4393e4;
+  }
+  input[type=button][name=return] {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #FF0000;
+  }
+</style>
+</head>
+
+<body style="padding-top: 30px;">
+<div>
+  <h1 align="center" style="color:white ;font-size: 50px; padding: 30px;">账号管理</h1>
+<table width="800" border="1">
+ <tbody>
+ <tr>
+ <td>账号</td>
+ <td>更改密码</td>
+ <td>删除账户</td>
+ </tr>
+
+ <users>
+ 
+ </tbody>
+</table>
+</div>
+<input type="button" name="create" id="create" value="新建账号" onclick='location.href=("create")'>
+<input type="button" name="return" id="return" value="返回" onclick='location.href=("functions")'>
+
+
+</body>
+</html>

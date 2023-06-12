@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
   <title>登录</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="./crypto-js.min.js"></script>
   <style>
     body {
             font-family: Arial, sans-serif;
@@ -55,8 +55,7 @@
     </div>
     <div>
       <label for="password">密码：</label>
-      <input type="hidden" id="password" name="password">
-      <input type="password" id="password-input">
+      <input type="password" id="password" name="password">
     </div>
     <div>
       <button type="submit" id="login-button">登录</button>
@@ -67,7 +66,6 @@
     var form = document.getElementById("login-form");
     var username = document.getElementById("username");
     var password = document.getElementById("password");
-    var passwordInput = document.getElementById("password-input");
     var button = document.getElementById("login-button");
 
     // 添加按钮点击事件
@@ -75,12 +73,12 @@
       // 阻止表单默认提交行为
       event.preventDefault();
       // 检查输入是否为空
-      if (username.value === "" || passwordInput.value === "") {
+      if (username.value === "" || password.value === "") {
         alert("请输入账号和密码");
         return;
       }
       // 对密码进行MD5
-      password.value = CryptoJS.MD5(passwordInput.value).toString();
+      password.value = CryptoJS.MD5(password.value).toString();
       // 提交表单
       form.submit();
     });

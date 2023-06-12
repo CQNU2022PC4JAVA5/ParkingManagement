@@ -18,7 +18,7 @@ public class SQL {
     }
 
     public boolean getConnect(){
-        System.out.println("连接数据库...");
+        //System.out.println("连接数据库...");
         try {
             this.conn = DriverManager.getConnection(DB_URL, USER, PASS);
         }
@@ -27,43 +27,43 @@ public class SQL {
             System.out.println("连接数据库[失败]");
             return false;
         }
-        System.out.println("连接数据库[成功]");
+        //System.out.println("连接数据库[成功]");
         return true;
     }
     public boolean disConnect(){
         try {
-            System.out.println("断开数据库...");
+            //System.out.println("断开数据库...");
             conn.close();
         }
         catch (Exception e){
             System.out.println("断开数据库[失败]");
             return false;
         }
-        System.out.println("断开数据库[成功]");
+        //System.out.println("断开数据库[成功]");
         return true;
     }
     public boolean getStatement() {
         try{
-            System.out.println("实例化Statement对象...");
+            //System.out.println("实例化Statement对象...");
             this.stmt = conn.createStatement();
         }catch (SQLException e){
             e.printStackTrace();
             System.out.println("实例化Statement对象[失败]");
             return false;
         }
-        System.out.println("实例化Statement对象[成功]");
+        //System.out.println("实例化Statement对象[成功]");
         return true;
     }
     public boolean delStatement() {
         try{
-            System.out.println("销毁Statement对象...");
+            //System.out.println("销毁Statement对象...");
             stmt.close();
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("销毁Statement对象[失败]");
             return false;
         }
-        System.out.println("销毁Statement对象[成功]");
+        //System.out.println("销毁Statement对象[成功]");
         return true;
     }
     public ResultSet getResultSet(String SQLCommand){
